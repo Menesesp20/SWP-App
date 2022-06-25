@@ -45,8 +45,6 @@ plt.rcParams['font.sans-serif'] = prop.get_name()
 
 ##################################################################################################################################################
 
-st.markdown('<style>body{background-color: #181818;}</style>', unsafe_allow_html=True)
-
 new_title = '<p style="font-family:Gagalin regular; color:#043484; font-size: 42px;">Sports With Python App</p>'
 st.markdown(new_title, unsafe_allow_html=True)
 

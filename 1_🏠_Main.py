@@ -20,7 +20,7 @@ sys.path.append('Functions')
 
 ##################################################################################################################################################
 
-image = Image.open('SWP LOGO.png')
+image = Image.open('LOGO.png')
 
 st.set_page_config(page_title='SWP APP', layout="wide", page_icon=image)
 

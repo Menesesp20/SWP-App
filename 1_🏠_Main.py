@@ -74,3 +74,6 @@ st.markdown(league_message_4, unsafe_allow_html=True)
 
 data_Message = '<p style="font-family:Gagalin regular; color:#043484; font-size: 18px;">All data from WyScout</p>'
 st.markdown(data_Message, unsafe_allow_html=True)
+
+developed_Message = '<p style="font-family:Gagalin regular; color:#043484; font-size: 16px;">App developed by: Pedro Meneses | @menesesp20</p>'
+st.markdown(developed_Message, unsafe_allow_html=True)

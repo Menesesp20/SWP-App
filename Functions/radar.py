@@ -448,6 +448,8 @@ def beeswarmSWP(df, playerName, cols, playerName2=None):
     fig.text(.12,.05,"all stats/90", fontsize=11, color=text_color)
     fig.text(.12,.03,"@menesesp20 / data via wyscout", fontstyle='italic', fontsize=11,color=text_color)
 
+    # add image
+    add_image('Images/SWL LOGO.png', fig, left=0.80, bottom=0.12, width=0.11, height=0.08)
 
 def radar_chart_compare(df, player, player2, cols):
 
@@ -524,6 +526,8 @@ def radar_chart_compare(df, player, player2, cols):
   
   fig.set_facecolor('#181818')
 
+  # add image
+  add_image('Images/SWL LOGO.png', fig, left=0.4578, bottom=0.429, width=0.11, height=0.134)
 
 def radar_chart(df, player, col_name_player, col_name_team, cols, league, club, player2=None, player3=None):
 

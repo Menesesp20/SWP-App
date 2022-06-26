@@ -348,7 +348,7 @@ def beeswarmSWP(df, playerName, cols, playerName2=None):
         else:
             minute = minute
 
-        df = df.loc[(df['Minutes played'] >= minute)].reset_index()
+        df = df.loc[(df['Minutes played'] >= minute) & (df['Comp'] == league) | (df['Comp'] == league2)].reset_index()
 
     elif playerName2 == None:
         player = df.loc[(df['Player'] == playerName)]
@@ -365,16 +365,16 @@ def beeswarmSWP(df, playerName, cols, playerName2=None):
 
         league = league[0]
 
-        df = df.loc[(df['Minutes played'] >= minute)].reset_index()
+        df = df.loc[(df['Minutes played'] >= minute) & (df['Comp'] == league)].reset_index()
 
     fig,axes = plt.subplots(3,2,figsize=(14,10))
-    fig.set_facecolor('#181818')
+    fig.set_facecolor('#1b1b1b')
 
     metrics = cols
 
     #set default colors
     text_color = 'white'
-    background = '#181818'
+    background = '#1b1b1b'
 
     #set up our base layer
     mpl.rcParams['xtick.color'] = text_color
@@ -431,6 +431,16 @@ def beeswarmSWP(df, playerName, cols, playerName2=None):
                 color = text_color,
                 va='center'
                     )
+
+        fig_text(s='Made in <SWP APP>',
+                x=0.45, y=.89,
+                #highlight_weights = ['bold'],
+                fontsize=15,
+                highlight_textprops = highlight_textprops,
+                color = text_color,
+                va='center'
+                    )
+
     elif playerName2 != None:
         highlight_textprops =\
             [{"color": '#043484',"fontweight": 'bold'},
@@ -449,7 +459,7 @@ def beeswarmSWP(df, playerName, cols, playerName2=None):
     fig.text(.12,.03,"@menesesp20 / data via wyscout", fontstyle='italic', fontsize=11,color=text_color)
 
     # add image
-    add_image('Images/SWL LOGO.png', fig, left=0.80, bottom=0.12, width=0.11, height=0.08)
+    add_image('Images/SWL LOGO.png', fig, left=0.80, bottom=0.01, width=0.11, height=0.05)
 
 def radar_chart_compare(df, player, player2, cols):
 
@@ -513,7 +523,7 @@ def radar_chart_compare(df, player, player2, cols):
 
   #Criação do radar chart
   fig, ax = plt.subplots(figsize=(18,15), dpi=200)
-  radar = Radar(background_color="#181818", patch_color="#e8e8e8", range_color="white", label_color="white", label_fontsize=11, range_fontsize=12)
+  radar = Radar(background_color="#1b1b1b", patch_color="#e8e8e8", range_color="white", label_color="white", label_fontsize=11, range_fontsize=12)
   fig, ax = radar.plot_radar(ranges=ranges, 
                              params=cols, 
                              values=values, 
@@ -521,13 +531,13 @@ def radar_chart_compare(df, player, player2, cols):
                              figax=(fig, ax),
                              image_coord=[0.40, 0.81, 0.1, 0.075],
                              title=title,
-                             endnote=endnote, end_size=0, end_color="#181818",
+                             endnote=endnote, end_size=0, end_color="#1b1b1b",
                              compare=True)
   
-  fig.set_facecolor('#181818')
+  fig.set_facecolor('#1b1b1b')
 
   # add image
-  add_image('Images/SWL LOGO.png', fig, left=0.4578, bottom=0.429, width=0.11, height=0.134)
+  add_image('Images/SWL LOGO.png', fig, left=0.458, bottom=0.445, width=0.11, height=0.08)
 
 def radar_chart(df, player, col_name_player, col_name_team, cols, league, club, player2=None, player3=None):
 

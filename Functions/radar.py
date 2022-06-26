@@ -537,7 +537,7 @@ def radar_chart_compare(df, player, player2, cols):
   fig.set_facecolor('#1b1b1b')
 
   # add image
-  add_image('Images/SWL LOGO.png', fig, left=0.458, bottom=0.445, width=0.11, height=0.08)
+  add_image('Images/SWL LOGO.png', fig, left=0.458, bottom=0.435, width=0.11, height=0.07)
 
 def radar_chart(df, player, col_name_player, col_name_team, cols, league, club, player2=None, player3=None):
 
